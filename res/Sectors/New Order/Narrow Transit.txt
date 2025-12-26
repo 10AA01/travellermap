@@ -1,0 +1,98 @@
+# Lower core / Narrow Transit
+# -19,-2
+
+# Name: 
+
+# Abbreviation: LLCr / Narr 
+
+# Milieu: M1105
+
+# Author:    10AA01
+
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+# Subsector F: 
+# Subsector G: 
+# Subsector H: 
+# Subsector I: 
+# Subsector J: 
+# Subsector K: 
+# Subsector L: 
+# Subsector M: 
+# Subsector N: 
+# Subsector O: 
+# Subsector P: 
+
+Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N B Z PBG W  A    Stellar    
+---- -------------------- --------- -------------------- ------ ------- ------ - - - --- -- ---- -----------
+# Subsector A (A1)
+0810 Solibus              ???????-?                                            - - R ???
+# Subsector B (B1)          
+1407 Llon Nebula          ???????-?                                            - - R ???            
+# Subsector C (C1)           
+2006 Quesaya              ???????-?                                            - - R ???            
+2202 Ukatis               ???????-?                                            - - R ???           
+2407 Borkyne              ???????-?                                            - - R ???           
+# Subsector D (D1)          
+2505 Calus                ???????-?                                            - - R ???
+2507 Roona                ???????-?                                            - - R ???            
+2605 Epica                ???????-?                                            - - R ???           
+2609 Rainos Cluster       ???????-?                                            - - R ???             
+2703 Moorja               ???????-?                                            - - R ???
+3001 Harrin               ???????-?                                            - - R ???         
+# Subsector E (A2)           
+0117 Natalon              ???????-?                                            - - R ???
+0415 Noe'ha'on            ???????-?                                            - - R ???           
+# Subsector F (B2)           
+1020 Calonica             ???????-?                                            - - R ???
+1114 New Balosar          ???????-?                                            - - R ???                                
+1216 Copperline           ???????-?                                            - - R ???
+1219 Tar Mordren          ???????-?                                            - - R ???                      
+1516 Pendari              ???????-?                                            - - R ???          
+# Subsector G (C2)
+1913 Kinyen               ???????-?                                            - - R ???           
+# Subsector H (D2)
+2615 Nkllon               ???????-?                                            - - R ???            
+3012 Ord Vaug             ???????-?                                            - - R ???                      
+3020 Qat Chrystac         ???????-?                                            - - R ???           
+# Subsector I (A3)           
+0625 D'rinba              ???????-?                                            - - R ???
+0627 Chibias              ???????-?                                            - - R ???
+0630 Kaal                 ???????-?                                            - - R ???          
+0823 Boomis Koori         ???????-?                                            - - R ???
+0824 Kriselist            ???????-?                                            - - R ???
+# Subsector J (B3)
+1429 Miztoc               ???????-?                                            - - R ???           
+1630 Feenix               ???????-?                                            - - R ???
+# Subsector K (C3)        
+2125 Naalol               ???????-?                                            - - R ???           
+# Subsector L (D3)
+# Subsector M (A4)
+0140 Mijos                ???????-?                                            - - R ???                        
+0331 Rrulinn              ???????-?                                            - - R ???
+0334 Cargamalis           ???????-?                                            - - R ???
+0335 Javin                ???????-?                                            - - R ???
+0336 Aztubeh              ???????-?                                            - - R ???
+0337 Kumru                ???????-?                                            - - R ???
+0338 High Chunah          ???????-?                                            - - R ???
+0339 Kirtarkin            ???????-?                                            - - R ???
+0340 Mexeluine            ???????-?                                            - - R ???  
+0433 Mugaar               ???????-?                                            - - R ???         
+0531 Dalisor              ???????-?                                            - - R ???
+0532 Jiroch               ???????-?                                            - - R ???
+0533 Quamar               ???????-?                                            - - R ???           
+# Subsector N (B4)
+0932 Abraxa               ???????-?                                            - - R ???
+# Subsector O (C4)            
+1831 Cyphar               ???????-?                                            - - R ???             
+1935 Ogem                 ???????-?                                            - - R ???
+1939 Velga                ???????-?                                            - - R ???              
+2338 Karfeddion           ???????-?                                            - - R ???
+2340 Belsavis             ???????-?                                            - - R ???           
+# Subsector P (D4)           
+2838 Tibrin               ???????-?                                            - - R ???                     
+3034 Eiattu               ???????-?                                            - - R ???            
+3138 Echnos               ???????-?                                            - - R ???  

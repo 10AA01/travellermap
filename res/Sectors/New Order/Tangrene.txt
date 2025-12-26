@@ -1,0 +1,82 @@
+# Tangrene
+# -17,2
+
+# Name: 
+
+# Abbreviation: Tang
+
+# Milieu: M1105
+
+# Author:    10AA01
+
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+# Subsector F: 
+# Subsector G: 
+# Subsector H: 
+# Subsector I: 
+# Subsector J: 
+# Subsector K: 
+# Subsector L: 
+# Subsector M: 
+# Subsector N: 
+# Subsector O: 
+# Subsector P: 
+
+Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N B Z PBG W  A    Stellar    
+---- -------------------- --------- -------------------- ------ ------- ------ - - - --- -- ---- -----------
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+0617 Gorsh                ???????-?                                            - - R ???
+1315 I'voroia             ???????-?                                            - - R ???
+# Subsector F:
+1011 Kellgar              ???????-?                                            - - R ???  
+# Subsector G: 
+1720 Soullex              ???????-?                                            - - R ???
+1816 Gulma                ???????-?                                            - - R ???
+# Subsector H: 
+# Subsector I:
+0824 Maltha Obex          ???????-?                                            - - R ??? 
+# Subsector J: 
+# Subsector K: 
+1824 Eol Sha              ???????-?                                            - - R ???
+2125 Caloan               ???????-?                                            - - R ???
+2128 Betha                ???????-?                                            - - R ???
+3224 Jaresh               ???????-?                                            - - R ???
+# Subsector L: 
+2526 Sesio                ???????-?                                            - - R ???
+2923 Ventooine            ???????-?                                            - - R ???
+3130 !?                   ???????-?                                            - - - ??? 
+3223 Basteel              ???????-?                                            - - R ???
+3229 !?                   ???????-?                                            - - - ??? 
+# Subsector M: 
+0836 Tangrene             ???????-?                                            - - R ???
+# Subsector N: 
+1038 Edusa                ???????-?                                            - - R ???
+1039 Tlabeska             ???????-?                                            - - R ???
+# Subsector O: 
+1838 Tal Pi               ???????-?                                            - - R ???
+2239 Pho Ph'ean           ???????-?                                            - - R ???
+2240 !?                   ???????-?                                            - - - ???  
+2333 Thalassia            ???????-?                                            - - R ???
+2338 Mitrin Pi            ???????-?                                            - - R ???
+2339 !?                   ???????-?                                            - - - ???  
+2436 !?                   ???????-?                                            - - - ???  
+2437 !?                   ???????-?                                            - - - ???  
+# Subsector P:  
+2536 !?                   ???????-?                                            - - - ???   
+2635 Praadost             ???????-?                                            - - R ???
+2731 Carosi               ???????-?                                            - - R ???
+2735 !?                   ???????-?                                            - - - ???  
+2833 !?                   ???????-?                                            - - - ???  
+2834 !?                   ???????-?                                            - - - ???  
+2933 !?                   ???????-?                                            - - - ???  
+3031 !?                   ???????-?                                            - - - ??? 
+3032 !?                   ???????-?                                            - - - ??? 
+3131 !?                   ???????-?                                            - - - ??? 
