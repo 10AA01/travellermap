@@ -1,0 +1,49 @@
+# Zakuul
+# -23,-1
+
+# Name: 
+
+# Abbreviation: Zaku
+
+# Milieu: M1105
+
+# Author:    10AA01
+
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+# Subsector F: 
+# Subsector G: 
+# Subsector H: 
+# Subsector I: 
+# Subsector J: 
+# Subsector K: 
+# Subsector L: 
+# Subsector M: 
+# Subsector N: 
+# Subsector O: 
+# Subsector P: 
+
+Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N B Z PBG W  A    Stellar    
+---- -------------------- --------- -------------------- ------ ------- ------ - - - --- -- ---- -----------
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+# Subsector F:  
+# Subsector G: 
+# Subsector H: 
+# Subsector I: 
+# Subsector J: 
+1326 Iokath               ???????-?                                            - - R ???
+# Subsector K: 
+1921 Zakuul               ???????-?                                            - - R ???
+2322 Asylum               ???????-?                                            - - R ???
+# Subsector L: 
+# Subsector M: 
+# Subsector N: 
+# Subsector O: 
+# Subsector P:       

@@ -1,0 +1,53 @@
+# Rakata
+# -21,-1
+
+# Name: Odessen
+
+# Abbreviation: Raka
+
+# Milieu: M1105
+
+# Author:    10AA01
+
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+# Subsector F: 
+# Subsector G: 
+# Subsector H: 
+# Subsector I: 
+# Subsector J: 
+# Subsector K: 
+# Subsector L: 
+# Subsector M: 
+# Subsector N: 
+# Subsector O: 
+# Subsector P: 
+
+Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N B Z PBG W  A    Stellar    
+---- -------------------- --------- -------------------- ------ ------- ------ - - - --- -- ---- -----------
+# Subsector A
+0903 Lehon                ???????-?                                            - - R ???
+0907 Tulpaa               ???????-?                                            - - R ???
+# Subsector B
+# Subsector C
+# Subsector D
+# Subsector E
+# Subsector F 
+# Subsector G  
+# Subsector H 
+3215 Queluhan Neb         ???????-?                                            - - R ???
+# Subsector I 
+# Subsector J 
+# Subsector K 
+# Subsector L 
+3225 Freerock             ???????-?                                            - - R ???
+# Subsector M 
+# Subsector N     
+1335 Agaris               ???????-?                                            - - R ??? 
+# Subsector O 
+1740 Zadd                 ???????-?                                            - - R ???
+# Subsector P (D4)
+1839 Xala                 ???????-?                                            - - R ???

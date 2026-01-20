@@ -1,0 +1,76 @@
+# Chiss 
+# -22,0
+
+# Name: 
+
+# Abbreviation: Chis2
+
+# Milieu: M1105
+
+# Author:    10AA01
+
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+# Subsector F: 
+# Subsector G: 
+# Subsector H: 
+# Subsector I: 
+# Subsector J: 
+# Subsector K: 
+# Subsector L: 
+# Subsector M: 
+# Subsector N: 
+# Subsector O: 
+# Subsector P: 
+
+Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N B Z PBG W  A    Stellar    
+---- -------------------- --------- -------------------- ------ ------- ------ - - - --- -- ---- -----------
+# Subsector A: 
+0405 Bogo Rai             ???????-?                                            - - R ??? 
+0409 Rhigar               ???????-?                                            - - R ???  
+0704 Kinoss               ???????-?                                            - - R ??? 
+# Subsector B: 
+1106 Oyokal               ???????-?                                            - - R ???
+1301 Thearterra           ???????-?                                            - - R ???
+1305 Ool                  ???????-?                                            - - R ???
+1405 Shihon               ???????-?                                            - - R ???
+1504 Avidich              ???????-?                                            - - R ???
+1607 Rhigar               ???????-?                                            - - R ???
+# Subsector C: 
+1903 Csilla               ???????-?                                            - - R ???
+1904 Cioral               ???????-?                                            - - R ???
+2101 Jamiron              ???????-?                                            - - R ???
+2107 Csaus                ???????-?                                            - - R ???
+2110 Station Chaf         ???????-?                                            - - R ???
+2202 Rentor               ???????-?                                            - - R ???
+2206 Copero               ???????-?                                            - - R ???
+2306 Sarvchi              ???????-?                                            - - R ???
+2404 Cormit               ???????-?                                            - - R ???
+2410 Mobus                ???????-?                                            - - R ???
+# Subsector D: 
+3105 Celwis               ???????-?                                            - - R ???
+# Subsector E: 
+0114 Far Cradle           ???????-?                                            - - R ???
+0319 Primea               ???????-?                                            - - R ???  
+# Subsector F:  
+1618 Urvh                 ???????-?                                            - - R ???  
+# Subsector G: 
+# Subsector H: 
+3116 Lioaoin              ???????-?                                            - - R ???  
+3219 Bardram Scoft        ???????-?                                            - - R ???  
+# Subsector I: 
+# Subsector J: 
+1522 Nikardun             ???????-?                                            - - R ???  
+# Subsector K: 
+# Subsector L: 
+2827 Solitair             ???????-?                                            - - R ???  
+2926 Stivic               ???????-?                                            - - R ???  
+# Subsector M: 
+# Subsector N: 
+1635 Regnant Station      ???????-?                                            - - R ???
+# Subsector O: 
+# Subsector P:   
+2731 Rapacc               ???????-?                                            - - R ???    

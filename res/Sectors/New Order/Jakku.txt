@@ -1,0 +1,82 @@
+# Jakku
+# -20,-1
+
+# Name: Jakku
+
+# Abbreviation: Jak
+
+# Milieu: M1105
+
+# Author:    10AA01
+
+# Subsector A: 
+# Subsector B: 
+# Subsector C: 
+# Subsector D: 
+# Subsector E: 
+# Subsector F: 
+# Subsector G: 
+# Subsector H: 
+# Subsector I: 
+# Subsector J: 
+# Subsector K: 
+# Subsector L: 
+# Subsector M: 
+# Subsector N: 
+# Subsector O: 
+# Subsector P: 
+
+Hex  Name                 UWP       Remarks              {Ix}   (Ex)    [Cx]   N B Z PBG W  A    Stellar    
+---- -------------------- --------- -------------------- ------ ------- ------ - - - --- -- ---- -----------
+# Subsector A 
+# Subsector B 
+# Subsector C  
+# Subsector D
+# Subsector E 
+# Subsector F
+# Subsector G 
+# Subsector H 
+2814 Kitel Phard          ???????-?                                            - - R ???
+2816 Hjaff                ???????-?                                            - - R ???
+2820 Candoria             ???????-?                                            - - R ???
+3113 Questal              ???????-?                                            - - R ???
+3114 Bowut                ???????-?                                            - - R ???
+3115 Inysa                ???????-?                                            - - R ???
+3117 Protobranch          ???????-?                                            - - R ???
+3119 Deymasoll            ???????-?                                            - - R ???
+3219 Zardossa Stix        ???????-?                                            - - R ???
+# Subsector I 
+0322 Jakku                ???????-?                                            - - R ???
+# Subsector J
+1427 Mintar               ???????-?                                            - - R ???
+1623 Rings of Kafrene     ???????-?                                            - - R ???
+# Subsector K 
+1822 The Almagest         ???????-?                                            - - R ???
+2326 Mindabaal            ???????-?                                            - - R ???
+2327 Donadus              ???????-?                                            - - R ???
+2421 Bardotta             ???????-?                                            - - R ???
+2428 Walalla              ???????-?                                            - - R ???
+# Subsector L 
+3121 Noclu                ???????-?                                            - - R ???
+3123 Trunska              ???????-?                                            - - R ???
+3225 Phu                  ???????-?                                            - - R ???
+3226 Hynestia             ???????-?                                            - - R ???
+3230 Korbin               ???????-?                                            - - R ???
+# Subsector M 
+0439 Lao-Mon              ???????-?                                            - - R ???
+0740 Kakra                ???????-?                                            - - R ???
+# Subsector N   
+1339 Aruza                ???????-?                                            - - R ???
+1538 Lequabis             ???????-?                                            - - R ???   
+# Subsector O 
+1737 K'taktaxka           ???????-?                                            - - R ???
+1839 Poviduze             ???????-?                                            - - R ???
+1932 Polyneus             ???????-?                                            - - R ???
+1936 Shasfath             ???????-?                                            - - R ???
+1939 Zoh                  ???????-?                                            - - R ???
+2032 Ephemeia             ???????-?                                            - - R ???
+2231 Tasariq              ???????-?                                            - - R ???
+2331 Twon Keteed          ???????-?                                            - - R ???
+# Subsector P 
+2833 Jandur               ???????-?                                            - - R ???
+2834 Cuagenia             ???????-?                                            - - R ???
