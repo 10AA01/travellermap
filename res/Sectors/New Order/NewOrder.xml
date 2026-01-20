@@ -7,295 +7,291 @@ The Traveller game in all forms is owned by Mongoose Publishing.
 Copyright (C) 1977 - 2026 Mongoose Publishing.
 -->
 
-<Sectors>	
+<Sectors>
 
 	<Sector>
-		<Y>0</Y>
-		<X>-22</X>
+		<Y>9</Y>
+		<X>-11</X>
+		<Name Author="10AA01">CZ-198</Name>
+		<DataFile Author="10AA01">CZ-198.txt</DataFile>
+	</Sector>
+	<Sector>
+		<Y>9</Y>
+		<X>-10</X>
+		<Name Author="10AA01">Gree</Name>
+		<DataFile Author="10AA01">Gree.txt</DataFile>
+	</Sector>
+	<Sector>
+		<Y>9</Y>
+		<X>-9</X>
+		<Name Author="10AA01">Corvus Minor</Name>
+		<DataFile Author="10AA01">Corvis Minor.txt</DataFile>
+	</Sector>
+	<Sector>
+		<Y>9</Y>
+		<X>-8</X>
+		<Name Author="10AA01">Tangrene</Name>
+		<DataFile Author="10AA01">Tangrene.txt</DataFile>
+	</Sector>
+	<Sector>
+		<Y>9</Y>
+		<X>-7</X>
+		<Name Author="10AA01">CSA 1</Name>
+		<DataFile Author="10AA01">CSA1.txt</DataFile>
+	</Sector>
+	<Sector>
+		<Y>9</Y>
+		<X>-6</X>
+		<Name Author="10AA01">CSA 2</Name>
+		<DataFile Author="10AA01">CSA2.txt</DataFile>
+	</Sector>
+
+	<Sector>
+		<Y>10</Y>
+		<X>-13</X>
+		<Name Author="10AA01">Chiss 1</Name>
+		<DataFile Author="10AA01">Chiss1.txt</DataFile>
+	</Sector>
+	<Sector>
+		<Y>10</Y>
+		<X>-12</X>
+		<Name Author="10AA01">Ilum</Name>
+		<DataFile Author="10AA01">Ilum.txt</DataFile>
+	</Sector>
+	<Sector>
+		<Y>10</Y>
+		<X>-11</X>
+		<Name Author="10AA01">Below CZ-198</Name>
+	</Sector>
+	<Sector>
+		<Y>10</Y>
+		<X>-10</X>
+		<Name Author="10AA01">Below Gree</Name>
+	</Sector>
+	<Sector>
+		<Y>10</Y>
+		<X>-9</X>
+		<Name Author="10AA01">Above Kuat</Name>
+	</Sector>
+	<Sector>
+		<Y>10</Y>
+		<X>-8</X>
+		<Name Author="10AA01">Mandalore</Name>
+	</Sector>
+	<Sector>
+		<Y>10</Y>
+		<X>-7</X>
+		<Name Author="10AA01">-7,-10</Name>
+	</Sector>
+	<Sector>
+		<Y>10</Y>
+		<X>-6</X>
+		<Name Author="10AA01">Tion Cluster</Name>
+	</Sector>
+
+	<Sector>
+		<Y>11</Y>
+		<X>-13</X>
 		<Name Author="10AA01">Chiss 2</Name>
 		<DataFile Author="10AA01">Chiss2.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>0</Y>
-		<X>-21</X>
-		<Name Author="10AA01">-21,0</Name>
+		<Y>11</Y>
+		<X>-12</X>
+		<Name Author="10AA01">Makatak</Name>
+		<DataFile Author="10AA01">Makatak.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>0</Y>
-		<X>-20</X>
+		<Y>11</Y>
+		<X>-11</X>
 		<Name Author="10AA01">¨SW Core</Name>
 	</Sector>
 	<Sector>
-		<Y>0</Y>
-		<X>-19</X>
+		<Y>11</Y>
+		<X>-10</X>
 		<Name Author="10AA01">Upper Core</Name>
 	</Sector>
 	<Sector>
-		<Y>0</Y>
-		<X>-18</X>
+		<Y>11</Y>
+		<X>-9</X>
 		<Name Author="10AA01">Kuat</Name>
 	</Sector>
 	<Sector>
-		<Y>0</Y>
-		<X>-17</X>
+		<Y>11</Y>
+		<X>-8</X>
 		<Name Author="10AA01">Hapes Consortium</Name>
 	</Sector>
 	<Sector>
-		<Y>0</Y>
-		<X>-16</X>
-		<Name Author="10AA01">-16,0</Name>
+		<Y>11</Y>
+		<X>-7</X>
+		<Name Author="10AA01">-7,-11</Name>
 	</Sector>
 	<Sector>
-		<Y>0</Y>
-		<X>-15</X>
+		<Y>11</Y>
+		<X>-6</X>
 		<Name Author="10AA01">Kessel</Name>
 	</Sector>
 
 	<Sector>
-		<Y>1</Y>
-		<X>-23</X>
+		<Y>12</Y>
+		<X>-14</X>
 		<Name Author="10AA01">Zakuul</Name>
 		<DataFile Author="10AA01">Zakuul.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-22</X>
+		<Y>12</Y>
+		<X>-13</X>
 		<Name Author="10AA01">Odessen</Name>
 		<DataFile Author="10AA01">Odessen.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-21</X>
+		<Y>12</Y>
+		<X>-12</X>
 		<Name Author="10AA01">Rakata</Name>
 		<DataFile Author="10AA01">Rakata.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-20</X>
+		<Y>12</Y>
+		<X>-11</X>
 		<Name Author="10AA01">Jakku</Name>
 		<DataFile Author="10AA01">Jakku.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-19</X>
+		<Y>12</Y>
+		<X>-10</X>
 		<Name Author="10AA01">Lower Core</Name>
 		<DataFile Author="10AA01">Lower Core.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-18</X>
+		<Y>12</Y>
+		<X>-9</X>
 		<Name Author="10AA01">Corellia</Name>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-17</X>
+		<Y>12</Y>
+		<X>-8</X>
 		<Name Author="10AA01">Mimban</Name>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-16</X>
+		<Y>12</Y>
+		<X>-7</X>
 		<Name Author="10AA01">Bothan Space</Name>
 	</Sector>
 	<Sector>
-		<Y>1</Y>
-		<X>-15</X>
+		<Y>12</Y>
+		<X>-6</X>
 		<Name Author="10AA01">Hutt Space</Name>
 	</Sector>
 
 	<Sector>
-		<Y>2</Y>
-		<X>-23</X>
+		<Y>13</Y>
+		<X>-14</X>
 		<Name Author="10AA01">Lwhekk</Name>
 		<DataFile Author="10AA01">Lwhekk.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-22</X>
-		<Name Author="10AA01">-22,-2 </Name>
+		<Y>13</Y>
+		<X>-13</X>
+		<Name Author="10AA01">-13,-13 </Name>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-21</X>
+		<Y>13</Y>
+		<X>-12</X>
 		<Name Author="10AA01">Endor</Name>
 		<DataFile Author="10AA01">Endor.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-20</X>
-		<Name Author="10AA01">-20,2 </Name>
+		<Y>13</Y>
+		<X>-11</X>
+		<Name Author="10AA01">-11,-13 </Name>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-19</X>
+		<Y>13</Y>
+		<X>-10</X>
 		<Name Author="10AA01">Lowest Core</Name>
 		<DataFile Author="10AA01">Lowest Core.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-18</X>
+		<Y>13</Y>
+		<X>-9</X>
 		<Name Author="10AA01">Sullust</Name>
 		<DataFile Author="10AA01">Sullust.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-17</X>
+		<Y>13</Y>
+		<X>-8</X>
 		<Name Author="10AA01">Naboo</Name>
 		<DataFile Author="10AA01">Naboo.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-16</X>
+		<Y>13</Y>
+		<X>-7</X>
 		<Name Author="10AA01">Idirda</Name>
 	</Sector>
 	<Sector>
-		<Y>2</Y>
-		<X>-15</X>
+		<Y>13</Y>
+		<X>-6</X>
 		<Name Author="10AA01">Kamino</Name>
 	</Sector>	
 	
 	<Sector>
-		<Y>3</Y>
-		<X>-21</X>
+		<Y>14</Y>
+		<X>-12</X>
 		<Name Author="10AA01">Red Nebula</Name>
 		<DataFile Author="10AA01">Red Nebula.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>3</Y>
-		<X>-20</X>
+		<Y>14</Y>
+		<X>-11</X>
 		<Name Author="10AA01">Sump</Name>
 	</Sector>
 	<Sector>
-		<Y>3</Y>
-		<X>-19</X>
+		<Y>14</Y>
+		<X>-10</X>
 		<Name Author="10AA01">Mustafar</Name>
 		<DataFile Author="10AA01">Mustafar.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>3</Y>
-		<X>-18</X>
+		<Y>14</Y>
+		<X>-9</X>
 		<Name Author="10AA01">Metharian Nebula</Name>
 		<DataFile Author="10AA01">Metharian Nebula.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>3</Y>
-		<X>-17</X>
+		<Y>14</Y>
+		<X>-8</X>
 		<Name Author="10AA01">Nixus</Name>
 		<DataFile Author="10AA01">Nixus.txt</DataFile>
 	</Sector>
 
 	<Sector>
-		<Y>4</Y>
-		<X>-19</X>
+		<Y>15</Y>
+		<X>-10</X>
 		<Name Author="10AA01">Delrakkin</Name>
 		<DataFile Author="10AA01">Delrakkin.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>4</Y>
-		<X>-18</X>
+		<Y>15</Y>
+		<X>-9</X>
 		<Name Author="10AA01">Kathol</Name>
 		<DataFile Author="10AA01">Kathol.txt</DataFile>
 	</Sector>
 	
 	<Sector>
-		<Y>5</Y>
-		<X>-19</X>
-		<Name Author="10AA01">-19,5</Name>
+		<Y>16</Y>
+		<X>-10</X>
+		<Name Author="10AA01">-10,-16</Name>
 	</Sector>
 	<Sector>
-		<Y>5</Y>
-		<X>-18</X>
+		<Y>16</Y>
+		<X>-9</X>
 		<Name Author="10AA01">Kathol Rift</Name>
 		<DataFile Author="10AA01">Kathol Rift.txt</DataFile>
 	</Sector>
 	<Sector>
-		<Y>5</Y>
-		<X>-17</X>
-		<Name Author="10AA01">-17,-5</Name>
-	</Sector>	
-	<Sector>
-		<Y>5</Y>
-		<X>-19</X>
-		<Name Author="10AA01">-19,-5</Name>
-	</Sector>	
-	
-	<Sector>
-		<Y>-1</Y>
-		<X>-22</X>
-		<Name Author="10AA01">Chiss 1</Name>
-		<DataFile Author="10AA01">Chiss1.txt</DataFile>
-	</Sector>
-	<Sector>
-		<Y>-1</Y>
-		<X>-21</X>
-		<Name Author="10AA01">Ilum</Name>
-		<DataFile Author="10AA01">Ilum.txt</DataFile>
-	</Sector>
-	<Sector>
-		<Y>-1</Y>
-		<X>-20</X>
-		<Name Author="10AA01">Below CZ-198</Name>
-	</Sector>
-	<Sector>
-		<Y>-1</Y>
-		<X>-19</X>
-		<Name Author="10AA01">Below Gree</Name>
-	</Sector>
-	<Sector>
-		<Y>-1</Y>
-		<X>-18</X>
-		<Name Author="10AA01">Above Kuat</Name>
-	</Sector>
-	<Sector>
-		<Y>-1</Y>
-		<X>-17</X>
-		<Name Author="10AA01">Mandalore</Name>
-	</Sector>
-	<Sector>
-		<Y>-1</Y>
-		<X>-16</X>
-		<Name Author="10AA01">-16,1</Name>
-	</Sector>
-	<Sector>
-		<Y>-1</Y>
-		<X>-15</X>
-		<Name Author="10AA01">Tion Cluster</Name>
-	</Sector>
-	
-	<Sector>
-		<Y>-2</Y>
-		<X>-20</X>
-		<Name Author="10AA01">CZ-198</Name>
-		<DataFile Author="10AA01">CZ-198.txt</DataFile>
-	</Sector>
-	<Sector>
-		<Y>-2</Y>
-		<X>-19</X>
-		<Name Author="10AA01">Gree</Name>
-		<DataFile Author="10AA01">Gree.txt</DataFile>
-	</Sector>
-	<Sector>
-		<Y>-2</Y>
-		<X>-18</X>
-		<Name Author="10AA01">Corvus Minor</Name>
-		<DataFile Author="10AA01">Corvis Minor.txt</DataFile>
-	</Sector>
-	<Sector>
-		<Y>-2</Y>
-		<X>-17</X>
-		<Name Author="10AA01">Tangrene</Name>
-		<DataFile Type="SecondSurvey">Tangrene.txt</DataFile>
-	</Sector>
-	<Sector>
-		<Y>-2</Y>
-		<X>-16</X>
-		<Name Author="10AA01">CSA 1</Name>
-		<DataFile Author="10AA01">CSA1.txt</DataFile>
-	</Sector>
-	<Sector>
-		<Y>-2</Y>
-		<X>-15</X>
-		<Name Author="10AA01">CSA 2</Name>
-		<DataFile Author="10AA01">CSA2.txt</DataFile>
+		<Y>16</Y>
+		<X>-8</X>
+		<Name Author="10AA01">-8,-16</Name>
 	</Sector>
 	
 </Sectors>
