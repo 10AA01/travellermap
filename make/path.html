@@ -2,12 +2,20 @@
 <title>Path Finder - Traveller Map</title>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="../favicon.svg">
-<link rel="stylesheet" href="../site.css?update=2023-08-08T08:43:58">
-<script src="../map.js?update=2023-08-08T08:43:57"></script>
-<script src="post.js?update=2023-09-13T19:20:48"></script>
-<script src="path.js?update=2023-08-08T08:43:57"></script>
+<link rel="stylesheet" href="../site.css?update=2026-11-03T18:48:14">
+<script type="importmap">
+{
+  "imports": {
+    "../map.js": "../map.js?update=2026-11-03T18:48:14",
+    "./post.js": "./post.js?update=2026-11-03T18:48:14",
+    "./path.js": "./path.js?update=2026-06-26T11:28:03"
+  }
+}
+</script>
 
-<h1>Path Finder &mdash; The Traveller Map</h1>
+<script type="module" src="makepath.js?update=2026-11-03T18:48:14"></script>
+
+<h1 class=sitename>Path Finder</h1>
 <ol class="steps">
   <li>
   <select id="sector">
@@ -58,5 +66,3 @@
   The <em class="product">Traveller</em> game in all forms is owned by Mongoose Publishing. Copyright 1977 &ndash; 2024 Mongoose Publishing.
   <a href="https://cdn.shopify.com/s/files/1/0609/6139/0839/files/Traveller_Fair_Use_Policy_2024.pdf?v=1725357857">Fair Use Policy</a>
 </div>
-
-<script src="makepath.js?update=2023-08-08T08:43:57"></script>

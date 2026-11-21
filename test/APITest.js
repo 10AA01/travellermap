@@ -1,8 +1,163 @@
-/*global assertEquals, assertTrue, runTests */
+//
+// Assertion Logic
+//
+
+var $ = function(s) {
+  return document.querySelector(s);
+};
+
+function compare(a, b) {
+  // Handle primitive cases
+  if (a !== Object(a))
+    return Object.is(a, b);
+
+  if (a === null || b === null)
+    return a === b;
+
+  if (a instanceof Date && b instanceof Date)
+    return Number(a) === Number(b);
+
+  if (a instanceof Array && b instanceof Array) {
+    if (a.length !== b.length)
+      return false;
+    for (var i = 0; i < a.length; ++i)
+      if (!compare(a[i], b[i]))
+        return false;
+    return true;
+  }
+
+  var aks = Object.keys(a).sort();
+  var bks = Object.keys(b).sort();
+  if (!compare(aks, bks))
+    return false;
+  for (i = 0; i < aks.length; ++i)
+    if (!compare(a[aks[i]], b[bks[i]]))
+      return false;
+  return true;
+}
+
+function AssertionError(msg) {
+  this.name = 'AssertionError';
+  this.message = msg;
+}
+function internal_assert(b, msg) {
+  if (!b) {
+    throw new AssertionError(msg);
+  }
+}
+function assertTrue(b, msg) {
+  internal_assert(b, msg + ': Expected true, was: ' + JSON.stringify(b));
+}
+function assertFalse(b, msg) {
+  internal_assert(!b, msg + ': Expected false, was: ' + JSON.stringify(b));
+}
+function assertEquals(a, b, msg) {
+  internal_assert(
+      compare(a, b),
+      msg + ': Expected ' + JSON.stringify(b) + ' was ' + JSON.stringify(a));
+}
+function assertNotEquals(a, b, msg) {
+  internal_assert(
+      !compare(a, b), msg + ': Expected not ' + JSON.stringify(b) + ' but was');
+}
 
 //
 // Test Helpers
 //
+
+const tests = [];
+function test(name, func) {
+  tests.push({name: name, func: func});
+}
+
+function runTests(tests) {
+  var tests_total = tests.length, tests_run = 0, tests_passed = 0,
+      tests_failed = 0;
+  $('#tests_total').textContent = tests.length;
+
+  function recordSuccess(name) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode('PASS: ' + name + ' \u00B6'));
+    div.className = 'test pass';
+    $('#results').appendChild(div);
+
+    ++tests_passed;
+    testDone();
+  }
+
+  function recordFailure(name, failure) {
+    var div = document.createElement('div');
+    div.appendChild(
+        document.createTextNode('FAIL: ' + name + ': ' + failure + ' \u00B6'));
+    div.className = 'test fail';
+    $('#results').appendChild(div);
+
+    ++tests_failed;
+    testDone();
+  }
+
+  function setProgress(fraction) {
+    var percent = String(Math.round(fraction * 100)) + '%';
+    $('#progress_meter').style.width = percent;
+    $('#progress_label').innerHTML = '';
+    $('#progress_label').appendChild(document.createTextNode(percent));
+  }
+
+  function testDone() {
+    tests_run += 1;
+
+    if (tests_passed + tests_failed !== tests_run)
+      console.error(
+          'Accounting mismatch!', tests_passed, tests_failed, tests_run);
+
+    $('#tests_run').textContent = tests_run;
+    $('#tests_passed').textContent = tests_passed;
+    $('#tests_failed').textContent = tests_failed;
+    setProgress(tests_run / tests_total);
+
+    if (tests_run === tests_total) {
+      $('#summary').className = tests_passed === tests_total ? 'pass' : 'fail';
+      $('#results').appendChild(document.createTextNode('\u03A9'));
+    }
+  }
+
+  setProgress(0);
+  tests.forEach(function(test, i) {
+    setTimeout(async () => {
+      await Promise.resolve();
+      try {
+        const result = await test.func();
+        recordSuccess(test.name);
+      } catch (reason) {
+        recordFailure(test.name, reason.message);
+      }
+    }, 10 * i);
+  });
+}
+
+function substituteParams(call) {
+  const values = {
+    '$sector': 'solo',
+    '$subsector': 'A',
+    '$ssname': 'Sol',
+    '$quadrant': 'gamma',
+    '$hex': '1827',
+    '$jump': 2,
+    '$query': 'terra'
+  };
+  Object.keys(values).forEach(function(key) {
+    call = call.replace(key, values[key]);
+  });
+  return call;
+}
+
+async function getBlob(url, type) {
+  assertTrue('Blob' in self, 'Blob support');
+  const r = await fetch(SERVICE_BASE + '/' + url);
+  assertEquals(r.status, 200, 'HTTP Status for ' + url);
+  assertEquals(r.headers.get('Content-Type'), type, 'Content-Type for ' + url);
+  return await r.blob();
+}
 
 const SERVICE_BASE = (function(l) {
   'use strict';
@@ -12,25 +167,29 @@ const SERVICE_BASE = (function(l) {
 }(window.location));
 
 async function fetchXML(uri) {
-  const r = await fetch(SERVICE_BASE + '/' + uri, {headers: {'Accept': 'text/xml'}});
+  const r =
+      await fetch(SERVICE_BASE + '/' + uri, {headers: {'Accept': 'text/xml'}});
   assertEquals(r.status, 200, 'HTTP Status');
   assertEquals(r.headers.get('Content-Type'), 'text/xml', 'Content-Type');
   return await r.text();
 }
 
 async function fetchJSON(uri) {
-  const r = await fetch(SERVICE_BASE + '/' + uri, {headers: {'Accept': 'application/json'}});
+  const r = await fetch(
+      SERVICE_BASE + '/' + uri, {headers: {'Accept': 'application/json'}});
   assertEquals(r.status, 200, 'HTTP Status');
-  assertEquals(r.headers.get('Content-Type'), 'application/json', 'Content-Type');
+  assertEquals(
+      r.headers.get('Content-Type'), 'application/json', 'Content-Type');
   return await r.json();
 }
 
 async function testXML(uri, expected) {
   function munge(s) {
-    return s
-      .replace(/(>\s*\r?\n\s*<)/g, '><')
-      .replace(/\s+xmlns:xsd="http:\/\/www\.w3\.org\/2001\/XMLSchema"/g, '')
-      .replace(/\s+xmlns:xsi="http:\/\/www\.w3\.org\/2001\/XMLSchema-instance"/g, '');
+    return s.replace(/(>\s*\r?\n\s*<)/g, '><')
+        .replace(/\s+xmlns:xsd="http:\/\/www\.w3\.org\/2001\/XMLSchema"/g, '')
+        .replace(
+            /\s+xmlns:xsi="http:\/\/www\.w3\.org\/2001\/XMLSchema-instance"/g,
+            '');
   }
 
   const xml = await fetchXML(uri);
@@ -42,56 +201,29 @@ async function testJSON(uri, expected) {
   assertEquals(json, expected, 'JSON response');
 }
 
-async function getBlob(url, type) {
-  assertTrue('Blob' in self, 'Blob support');
-  const r = await fetch(SERVICE_BASE + '/' + url);
-  assertEquals(r.status, 200, 'HTTP Status for ' + url);
-  assertEquals(r.headers.get('Content-Type'), type, 'Content-Type for ' + url);
-  return await r.blob();
-}
-
-//
-// Tests
-//
-const tests = [];
-function test(name, func) { tests.push({ name: name, func: func }); }
-
 test('Coordinates JSON - Sector Only', () => {
-  return testJSON('api/coordinates?sector=spin',
-                  { sx: -4, sy: -1, hx: 0, hy: 0, x: -129, y: -80 });
+  return testJSON(
+      'api/coordinates?sector=spin',
+      {sx: -4, sy: -1, hx: 0, hy: 0, x: -129, y: -80});
 });
 
 test('Coordinates JSON - Sector + Hex', () => {
-  return testJSON('api/coordinates?sector=spin&hex=1910',
-                  { sx: -4, sy: -1, hx: 19, hy: 10, x: -110, y: -70 });
+  return testJSON(
+      'api/coordinates?sector=spin&hex=1910',
+      {sx: -4, sy: -1, hx: 19, hy: 10, x: -110, y: -70});
 });
 
 test('Coordinates XML - Sector Only', () => {
-  return testXML('api/coordinates?sector=spin',
-      '<?xml version="1.0"?><Coordinates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><sx>-4<\/sx><sy>-1<\/sy><hx>0<\/hx><hy>0<\/hy><x>-129<\/x><y>-80<\/y><\/Coordinates>');
+  return testXML(
+      'api/coordinates?sector=spin',
+      '<?xml version="1.0"?><Coordinates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><sx>-4</sx><sy>-1</sy><hx>0</hx><hy>0</hy><x>-129</x><y>-80</y></Coordinates>');
 });
 
 test('Coordinates XML - Sector + Hex', () => {
-  return testXML('api/coordinates?sector=spin&hex=1910',
-      '<?xml version="1.0"?><Coordinates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><sx>-4<\/sx><sy>-1<\/sy><hx>19<\/hx><hy>10<\/hy><x>-110<\/x><y>-70<\/y><\/Coordinates>');
+  return testXML(
+      'api/coordinates?sector=spin&hex=1910',
+      '<?xml version="1.0"?><Coordinates xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><sx>-4</sx><sy>-1</sy><hx>19</hx><hy>10</hy><x>-110</x><y>-70</y></Coordinates>');
 });
-
-
-function substituteParams(call) {
-  const values = {
-    "$sector": "solo",
-    "$subsector": "A",
-    "$ssname": "Sol",
-    "$quadrant": "gamma",
-    "$hex": "1827",
-    "$jump": 2,
-    "$query": "terra"
-  };
-  Object.keys(values).forEach(function(key) {
-    call = call.replace(key, values[key]);
-  });
-  return call;
-}
 
 function typeTest(api, expected_type) {
   api = substituteParams(api);
@@ -108,11 +240,13 @@ function typeTest(api, expected_type) {
 
 typeTest('Search.aspx?q=$query', 'text/xml');
 typeTest('JumpMap.aspx?sector=$sector&hex=$hex&j=$jump', 'image/png');
-typeTest('JumpMap.aspx?sector=$sector&hex=$hex&j=$jump&style=candy', 'image/png');
-typeTest('JumpMap.aspx?sector=$sector&hex=$hex&j=$jump&style=candy&clip=0', 'image/jpeg');
-typeTest('Poster.aspx?sector=$sector&subsector=$subsector', 'image/png');
-typeTest('Poster.aspx?sector=$sector&subsector=$subsector&style=candy', 'image/jpeg');
-typeTest('Tile.aspx?x=0&y=0&scale=64', 'image/png');
+typeTest('JumpMap.aspx?sector=$sector&hex=$hex&j=$jump&style=candy',
+'image/png');
+typeTest('JumpMap.aspx?sector=$sector&hex=$hex&j=$jump&style=candy&clip=0',
+'image/jpeg'); typeTest('Poster.aspx?sector=$sector&subsector=$subsector',
+'image/png');
+typeTest('Poster.aspx?sector=$sector&subsector=$subsector&style=candy',
+'image/jpeg'); typeTest('Tile.aspx?x=0&y=0&scale=64', 'image/png');
 typeTest('Tile.aspx?x=0&y=0&scale=64&style=candy', 'image/jpeg');
 typeTest('Coordinates.aspx?sector=$sector', 'text/xml');
 typeTest('Credits.aspx?sector=$sector', 'text/xml');
@@ -120,10 +254,10 @@ typeTest('JumpWorlds.aspx?sector=$sector&hex=$hex&j=$jump', 'text/xml');
 typeTest('JumpWorlds.aspx?sector=$sector&hex=$hex&j=$jump', 'text/xml');
 typeTest('Universe.aspx', 'text/xml');
 typeTest('SEC.aspx?sector=$sector', 'text/plain; charset=Windows-1252');
-typeTest('SEC.aspx?sector=$sector&type=SecondSurvey', 'text/plain; charset=utf-8');
-typeTest('SEC.aspx?sector=$sector&type=TabDelimited', 'text/plain; charset=utf-8');
-typeTest('SectorMetaData.aspx?sector=$sector', 'text/xml');
-typeTest('MSEC.aspx?sector=$sector', 'text/plain; charset=utf-8');
+typeTest('SEC.aspx?sector=$sector&type=SecondSurvey', 'text/plain;
+charset=utf-8'); typeTest('SEC.aspx?sector=$sector&type=TabDelimited',
+'text/plain; charset=utf-8'); typeTest('SectorMetaData.aspx?sector=$sector',
+'text/xml'); typeTest('MSEC.aspx?sector=$sector', 'text/plain; charset=utf-8');
 */
 
 // APIs ----------
@@ -137,12 +271,16 @@ typeTest('api/route?start=SPIN+1910&end=SPIN+2207', 'application/json');
 // Rendering
 
 typeTest('api/jumpmap?sector=$sector&hex=$hex&j=$jump', 'image/png');
-typeTest('api/jumpmap?sector=$sector&hex=$hex&j=$jump&style=candy', 'image/png');
-typeTest('api/jumpmap?sector=$sector&hex=$hex&j=$jump&style=candy&clip=0', 'image/jpeg');
+typeTest(
+    'api/jumpmap?sector=$sector&hex=$hex&j=$jump&style=candy', 'image/png');
+typeTest(
+    'api/jumpmap?sector=$sector&hex=$hex&j=$jump&style=candy&clip=0',
+    'image/jpeg');
 
 typeTest('api/poster?sector=$sector', 'image/png');
 typeTest('api/poster?sector=$sector&subsector=$subsector', 'image/png');
-typeTest('api/poster?sector=$sector&subsector=$subsector&style=candy', 'image/jpeg');
+typeTest(
+    'api/poster?sector=$sector&subsector=$subsector&style=candy', 'image/jpeg');
 typeTest('api/poster?sector=$sector&quadrant=$quadrant', 'image/png');
 
 typeTest('api/poster/$sector', 'image/png');
@@ -157,14 +295,16 @@ typeTest('api/tile?x=0&y=0&scale=64&style=candy', 'image/jpeg');
 
 typeTest('api/coordinates?sector=$sector', 'application/json');
 typeTest('api/credits?sector=$sector', 'application/json');
-typeTest('api/jumpworlds?sector=$sector&hex=$hex&jump=$jump', 'application/json');
+typeTest(
+    'api/jumpworlds?sector=$sector&hex=$hex&jump=$jump', 'application/json');
 typeTest('api/universe', 'application/json');
 
 // Data Retrieval
 
 typeTest('api/sec?sector=$sector', 'text/plain; charset=utf-8');
 typeTest('api/sec?type=sec&sector=$sector', 'text/plain; charset=Windows-1252');
-typeTest('api/sec?type=TabDelimited&sector=$sector', 'text/plain; charset=utf-8');
+typeTest(
+    'api/sec?type=TabDelimited&sector=$sector', 'text/plain; charset=utf-8');
 
 typeTest('api/sec/$sector', 'text/plain; charset=utf-8');
 typeTest('api/sec/$sector/$quadrant', 'text/plain; charset=utf-8');
@@ -222,7 +362,6 @@ typeTest('data/$sector/$ssname/tab', 'text/plain; charset=utf-8');
 typeTest('data/$sector/$ssname/sec', 'text/plain; charset=Windows-1252');
 typeTest('data/$sector/$ssname/image', 'image/png');
 
-
 test('sec/metadata/poster - blobs', async () => {
   assertTrue('FormData' in self, 'FormData support');
 
@@ -235,7 +374,8 @@ test('sec/metadata/poster - blobs', async () => {
   fd.append('file', blobs[0]);
   fd.append('metadata', blobs[1]);
 
-  const r = await fetch(SERVICE_BASE + '/api/poster', {method: 'POST', body: fd});
+  const r =
+      await fetch(SERVICE_BASE + '/api/poster', {method: 'POST', body: fd});
   assertEquals(r.status, 200, 'HTTP Status');
   assertEquals(r.headers.get('Content-Type'), 'image/png', 'Content-Type');
 });
@@ -251,42 +391,39 @@ test('sec/metadata/poster - form data', async () => {
   fd.append('file', blobs[0]);
   fd.append('metadata', blobs[1]);
 
-  const r = await fetch(SERVICE_BASE + '/api/jumpmap?hex=1910', {method: 'POST', body: fd});
+  const r = await fetch(
+      SERVICE_BASE + '/api/jumpmap?hex=1910', {method: 'POST', body: fd});
   assertEquals(r.status, 200, 'HTTP Status');
   assertEquals(r.headers.get('Content-Type'), 'image/png', 'Content-Type');
 });
 
 [
-  /*
-  'Coordinates.aspx?sector=$sector',
-  'JumpWorlds.aspx?sector=$sector&hex=$hex&j=$jump',
-  'SEC.aspx?sector=$sector',
-  'MSEC.aspx?sector=$sector',
-  'SectorMetaData.aspx?sector=$sector',
-  'Universe.aspx',
-  'Search.aspx?q=$query',
-  'JumpMap.aspx?sector=$sector&hex=$hex&j=$jump',
-  'Poster.aspx?sector=$sector&subsector=$subsector',
-  'Tile.aspx?x=0&y=0&scale=64',
-  */
-  'api/coordinates?sector=$sector',
-  'api/sec?sector=$sector',
-  'api/sec?type=sec&sector=$sector',
-  'api/sec?type=TabDelimited&sector=$sector',
-  'api/metadata?sector=$sector',
-  'api/msec?sector=$sector',
-  'api/jumpworlds?sector=$sector&hex=$hex&jump=$jump',
-  'api/search?q=$query',
-  'api/universe'
-].forEach(function(api) {
-  api = substituteParams(api);
+    /*
+    'Coordinates.aspx?sector=$sector',
+    'JumpWorlds.aspx?sector=$sector&hex=$hex&j=$jump',
+    'SEC.aspx?sector=$sector',
+    'MSEC.aspx?sector=$sector',
+    'SectorMetaData.aspx?sector=$sector',
+    'Universe.aspx',
+    'Search.aspx?q=$query',
+    'JumpMap.aspx?sector=$sector&hex=$hex&j=$jump',
+    'Poster.aspx?sector=$sector&subsector=$subsector',
+    'Tile.aspx?x=0&y=0&scale=64',
+    */
+    'api/coordinates?sector=$sector', 'api/sec?sector=$sector',
+    'api/sec?type=sec&sector=$sector',
+    'api/sec?type=TabDelimited&sector=$sector', 'api/metadata?sector=$sector',
+    'api/msec?sector=$sector',
+    'api/jumpworlds?sector=$sector&hex=$hex&jump=$jump', 'api/search?q=$query',
+    'api/universe']
+    .forEach(function(api) {
+      api = substituteParams(api);
 
-  test("No Accept: " + api, async () => {
-    const response = await fetch(SERVICE_BASE + '/' + api, {headers: {'Accept': ''}});
-    assertEquals(response.status, 200, 'HTTP Status');
-  });
-});
+      test('No Accept: ' + api, async () => {
+        const response =
+            await fetch(SERVICE_BASE + '/' + api, {headers: {'Accept': ''}});
+        assertEquals(response.status, 200, 'HTTP Status');
+      });
+    });
 
-// Initiate Test Harness
-
-window.onload = () => { runTests(tests); };
+runTests(tests);

@@ -3,11 +3,17 @@
 <title>Atlas - Traveller Map</title>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="../favicon.svg">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.8/handlebars.min.js"></script>
-<script src="../map.js?update=2023-08-08T08:43:57"></script>
-<script src="atlas.js?update=2023-08-08T08:43:57"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.10/handlebars.min.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "../map.js": "../map.js?update=2026-11-03T18:48:14"
+  }
+}
+</script>
+<script type="module" src="atlas.js?update=2026-06-26T11:28:03"></script>
 <style>
-@import url(https://fonts.googleapis.com/css?family=Marcellus|Roboto+Condensed);
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Roboto+Condensed');
 
 /* Pagination ============================== */
 
@@ -43,7 +49,7 @@ html, body {
   color: black;
 }
 
-@media only screen {
+@media screen {
   body {
     text-align: center;
     background-color: gray;
@@ -120,6 +126,7 @@ h1.underline {
   background-position: 100% 0%;
   background-size: auto 100%;
   -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 #cover_page .title_adventure,
 #cover_page .title_title {
@@ -142,6 +149,7 @@ h1.underline {
   background-position: 18% 0%;
   background-size: auto 100%;
   -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
 }
 #backcover_page .blurb {
   position: absolute;

@@ -1,59 +1,76 @@
-/*global Traveller */ // for lint and IDEs
+import * as Traveller from '../map.js';
+
+const Util = Traveller.Util;
+const $ = Util.$;
+const $$ = Util.$$;
 
 // Common routines for various Makers:
 // * Populate sector selector, and load data on demand
 // * Add drag-and-drop handlers for TEXTAREA elements
 
-'use strict';
+populateSector();
 
-window.addEventListener('DOMContentLoaded', async event => {
-  const $ = s => document.querySelector(s);
-  const $$ = s => Array.from(document.querySelectorAll(s));
-
+export async function populateSector() {
   const cmp = (a, b) => a < b ? -1 : b < a ? 1 : 0;
 
   const list = $('#sector');
+  if (!list)
+    return;
 
   const seen = new Set();
   const universe = await Traveller.MapService.universe({requireData: 1});
   universe.Sectors
-    .filter(sector => Math.abs(sector.X) < 10 && Math.abs(sector.Y) < 7)
-    .map(sector => {
-      let name = sector.Names[0].Text;
-      if (seen.has(name))
-        name += ` (${sector.Milieu})`;
-      seen.add(name);
-      return {
-        display: name,
-        name: sector.Names[0].Text,
-        milieu: sector.Milieu || ''
-      };
-    })
-    .sort((a, b) => cmp(a.display, b.display))
-    .forEach(record => {
-      const option = document.createElement('option');
-      option.appendChild(document.createTextNode(record.display));
-      option.value = [record.name, record.milieu].join('|');
-      list.appendChild(option);
-    });
-
-  list.addEventListener('change', event => {
-    const s = list.value.split('|'),
-          name = s[0],
-          milieu = s[1] || undefined;
-    Traveller.MapService.sectorData(name, {
-      type: 'SecondSurvey', metadata: 0, milieu})
-      .then(data => {
-        const target = $('#data');
-        if (target) target.value = data;
+      .filter(sector => Math.abs(sector.X) < 10 && Math.abs(sector.Y) < 8)
+      .map(sector => {
+        let name = sector.Names[0].Text;
+        if (seen.has(name))
+          name += ` (${sector.Milieu})`;
+        seen.add(name);
+        return {
+          display: name,
+          name: sector.Names[0].Text,
+          milieu: sector.Milieu || ''
+        };
+      })
+      .sort((a, b) => cmp(a.display, b.display))
+      .forEach(record => {
+        const option = document.createElement('option');
+        option.appendChild(document.createTextNode(record.display));
+        option.value = [record.name, record.milieu].join('|');
+        list.appendChild(option);
       });
 
-    Traveller.MapService.sectorMetaData(name, {
-      accept: 'text/xml', milieu})
-      .then(data => {
-        const target = $('#metadata');
-        if (target) target.value = data;
-      });
+  list.addEventListener('change', (_event) => {
+    const s = list.value.split('|'), name = s[0], milieu = s[1] || undefined;
+
+    Traveller.MapService
+        .sectorData(
+            name,
+            {type: 'SecondSurvey', metadata: 0, milieu, abortKey: 'sectorData'})
+        .then(data => {
+          const target = $('#data');
+          if (target)
+            target.value = data;
+        })
+        .catch(err => {
+          if (err?.name === 'AbortError')
+            return;
+          console.error(err);
+        });
+
+    Traveller.MapService
+        .sectorMetaData(
+            name, {accept: 'text/xml', milieu, abortKey: 'sectorMetaData'})
+        .then(data => {
+          const target = $('#metadata');
+          if (target)
+            target.value = data;
+        })
+        .catch(err => {
+          if (err?.name === 'AbortError')
+            return;
+          console.error(err);
+        });
   });
 
   $$('textarea.drag-n-drop').forEach(elem => {
@@ -70,26 +87,30 @@ window.addEventListener('DOMContentLoaded', async event => {
     });
     elem.placeholder = 'Copy and paste data or drag and drop a file here.';
   });
+}
 
-  async function blobToString(blob) {
-    // Try UTF-8 first
-    const text = await blob.text();
-    if (text.indexOf('\uFFFD') === -1)
-      return text;
+export async function blobToString(blob) {
+  // Try UTF-8 first
+  const text = await blob.text();
+  if (text.indexOf('\uFFFD') === -1)
+    return text;
 
-    // Fall back to Windows-1252
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.readAsText(blob, 'windows-1252');
-      reader.onload = event => { resolve(reader.result); };
-      reader.onerror = event => { reject(reader.error); };
-    });
-  }
-});
+  // Fall back to Windows-1252
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsText(blob, 'windows-1252');
+    reader.onload = event => {
+      resolve(reader.result);
+    };
+    reader.onerror = event => {
+      reject(reader.error);
+    };
+  });
+}
 
 // |data| can be string (payload) or object (key/value form data)
 // Returns Promise<string>
-async function getTextViaPOST(url, data) {
+export async function getTextViaPOST(url, data) {
   let request;
   if (typeof data === 'string') {
     request = fetch(url, {
@@ -100,15 +121,12 @@ async function getTextViaPOST(url, data) {
   } else {
     data = Object(data);
     const fd = new FormData();
-    Object.keys(data).forEach(key => {
+    for (const key of Object.keys(data)) {
       const value = data[key];
       if (value !== undefined && value !== null)
         fd.append(key, data[key]);
-    });
-    request = fetch(url, {
-      method: 'POST',
-      body: fd
-    });
+    }
+    request = fetch(url, {method: 'POST', body: fd});
   }
 
   const response = await request;
@@ -118,7 +136,7 @@ async function getTextViaPOST(url, data) {
   return text;
 }
 
-async function getJSONViaPOST(url, data) {
+export async function getJSONViaPOST(url, data) {
   const text = await getTextViaPOST(url, data);
   return JSON.parse(text);
 }

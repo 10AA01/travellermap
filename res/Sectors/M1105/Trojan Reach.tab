@@ -224,7 +224,7 @@ Troj	G	2113	Dolberg	BAF889D-B		Ph Pz (Hursuuun)	A	300	NaHu	F7 V	{ 2 }	(A7C+5)	[C
 Troj	G	2115	Vume	B100477-C		Ni Va An Ht		123	NaHu	K7 II	{ 1 }	(B34+1)	[455C]		15	132
 Troj	G	2116	Theev	A434500-F	K	Ni Da Ht	A	934	NaHu	G0 V	{ 1 }	(E45-3)	[161A]		16	-840
 Troj	G	2120	Marduk	C577436-5		Ni Pa Lt		503	NaHu	K7 V	{ -2 }	(631-3)	[3244]		11	-54
-Troj	K	2123	Asim	B867564-6		Ag Ni Ga Pr O:2324		205	NaHu	F2 V	{ 0 }	(744-2)	[3534]		10	-224
+Troj	K	2123	Asim	B867564-6		Ag Ni Ga Pr O:2223		205	NaHu	F2 V	{ 0 }	(744-2)	[3534]		10	-224
 Troj	K	2125	Kteiroa	C560164-8		De Lo O:		710	AsMw	F5 V	{ -2 }	(400-4)	[1136]		7	-16
 Troj	O	2133	Hewekho	E10079A-7		Na Va Pi		923	AsMw	G6 II M9 V	{ -2 }	(966+1)	[9579]		13	324
 Troj	O	2134	Airliweiw	D56767B-6		Ag Ni Ri		513	AsSc	F5 V	{ -1 }	(853+1)	[8578]		9	120
@@ -258,7 +258,7 @@ Troj	C	2402	Islent	BAC0789-9		He Pz	A	103	ImDd	A4 V	{ 1 }	(C6A+2)	[886A]	B	11	14
 Troj	C	2405	Alexin	B000420-C		As Ni Va Ht		220	ImDd	F5 V	{ 1 }	(834-3)	[1517]	B	11	-288
 Troj	G	2411	Cordillon	C431210-B		Lo Po		922	ImDd	K1 V	{ 0 }	(810-4)	[1216]	B	12	-32
 Troj	K	2421	Blue	B543487-B		Ni Po		702	NaHu	F9 V	{ 1 }	(834+1)	[455B]		15	96
-Troj	K	2424	Hilfer	B55077A-6		De Po		600	NaHu	M6 V	{ 0 }	(967+2)	[9778]		4	756
+Troj	K	2424	Hilfer	BA5077A-6		De Po		600	NaHu	M6 V	{ 0 }	(967+2)	[9778]		4	756
 Troj	K	2425	Paal	B564679-6		Ag Ni Ri		603	NaHu	F3 V	{ 1 }	(855+2)	[7767]		9	400
 Troj	K	2426	Sink	D665220-5		Lo Ga Lt		813	NaHu	F5 V	{ -3 }	(410-5)	[1111]		8	-20
 Troj	K	2428	Fantasy	E788400-3		Ni Pa Lt		331	NaHu	G2 V	{ -3 }	(631-5)	[1111]		11	-90
@@ -309,7 +309,7 @@ Troj	H	2918	Fist	B789430-C		Ni Ht		313	ImDd	F1 V	{ 1 }	(A34-3)	[1517]	B	10	-360
 Troj	L	2921	Umemii	C521877-7		He Na Po Ph Pi		304	NaHu	F5 V	{ -1 }	(A77-1)	[8757]		9	-490
 Troj	L	2923	Argona	B612586-9		Ic Ni		403	NaHu	K2 V M3 V	{ 0 }	(A44-1)	[4548]		9	-160
 Troj	P	2938	Sarage	B540523-B	N	De He Ni Po RsG		902	CsIm	F1 V	{ 1 }	(945-2)	[2628]		8	-360
-Troj	D	3003	627-301	X000120-7		As Lo Va Fo RsB	R	901	ImDd	F3 V	{ -3 }	(300-5)	[1112]		10	-15
+Troj	D	3003	627-301	X000120-7		As Lo Va Fo RsB	R	901	ImDd	F3 V BH	{ -3 }	(300-5)	[1112]		10	-15
 Troj	H	3011	Dimorus	D300755-7		Na Va Pi		600	ImDd	G0 V M7 V	{ -2 }	(966-4)	[5535]	BD	13	-1296
 Troj	H	3012	Our Planet	B687100-A		Lo Ga		314	ImDd	F1 V	{ 1 }	(801-3)	[1215]	B	13	-24
 Troj	H	3013	Ayldem	A540784-C	N	De He Po Pi Pz Droy7 Ht	A	804	ImDd	M2 V	{ 2 }	(D6C+1)	[593A]	BD	13	936

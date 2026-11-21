@@ -284,39 +284,45 @@ Barcelona     1826 A764955-A  J Hi Pr Cp           404 Cc A3 V
 Lund          1827 B796564-6    Ag Ni / Mr Tz      213 Cc K4 V           
 Kiseti        1925 B664964-7    Hi Pr / Mr         204 Kc F4 VI M3 VI K8 
 Cornelio      2025 X200000-0    Ba Va / Tz         004 Kc M8 VI          
-Storm         2122 E774850-7    Pa Ph Pi           200 na F3 V G8 VI     
+Storm         2122 X774000-0    Pa Ph Pi           200 na F3 V G8 VI     
 Kalora        2126 A676A94-D  J Hi In Hw Cp        224 Kc K6 V K5 VI     
 Valuchistan   2129 B783845-8    Ri Ph Cp           803 Id K0 IV          
 Alcmena       2130 C978744-8    Ag Pi              903 Id A5 V           
 Mackinac      2226 B593964-7    Hi In / Mr Sa      204 Kc G3 VI K2 V     
 Nazarene      2228 D6617E9-6    Ri / Pz Tz      A  805 na K8 V           
 Milner        2230 C669611-7    Ni Ri              604 na G7 V           
+Galatea       2326 D886436-6    Ni                 803 na M5 V
 Arcy          2327 A776722-A    Ag Pi              204 na K1 V K5 V      
 Strensall     2328 X600000-0    Ba Va              404 na M9 II          
 Khmer         2330 E989764-7    Ri / Mr Pz      A  911 Mg K1 V M6 VI     
 Fafnir        2422 X000000-0    As Ba Va           010 na D              
 Gustafson     2423 D473464-7    Ni / Mr            412 na G3 V K5 V      
+Proteus       2425 CB68684-5    Ri Ga              512 na F4 V
 DM19 2426     2426 X000000-0    As Ba Va           301 na M6 V           
+Rhe           2427 DEA6530-5    Ni                 111 na G7 V
 De Naburn     2428 B663765-9    Ri / O:MgCf        804 Mg F5 V           
 Hrothgar      2429 E8998E9-7  J Ph Pi              703 Mg G0 V           
 Calanthe      2521 C675624-6  V Ag Ni / Tz WTN     700 Ls M1 V   
 Oosterbeck    2522 D877623-7    In                 822 Ls G2 V   
 Witner        2526 C966620-8    Ag Ni Ri / WTN     414 na K0 IV          
+Vorara        2527 B86A775-A    Ri Wa              502 na G3 V
 Budepest      2529 A9699A5-A    Hi Pr Cp / WTN 5.5 302 Mg G3 VI M6 VI    
 Payntour      2530 B677833-9    Pa Ph Pi / WTN     324 Rr G8 V K3 VI     
 Aachenbahn    2621 B557764-9    Ag / Tz O:LeaS     934 Ls K6 V           
 Carfergus     2622 A564850-8  V Ri Pa Ph / WTN     603 Ls A5 V           
 Miranda       2625 X325000-0    Ba                 002 na F2 V M4 V      
-Uri'vk        2626 A764944-9  J Hi Pr / Uri9       403 na G9 V           
+Uri'vk        2626 AA64944-9  J Hi Pr / Uri9       403 na G9 V           
+Tanan         2627 B763895-6    Ni                 202 na F5 V
 Ehrlich       2629 C995864-8    Pa Ph Pi / Mr T    411 Mg G3 VI          
-Sensei        2630 B678962-8    Hi In / Mr Sa      803 Rr M0 V           
+Sensei        2630 A878962-8    Hi In / Mr Sa      803 Rr M0 V           
 Berelate      2722 C554755-9    Ag / Tz            513 Ls K5 V           
 Lammas        2724 DA00311-8    Lo Va / Tz         314 na F0 II D D      
 Wyntryngham   2725 C7639E9-8    Hi Pr / Pz      A  523 na F4 IV M3 V 
 Rajpur        2726 C651823-A    Pr In              312 na K7 V M3 V   
-Derthe Belt   2728 D000500-9    As Ni Va / Pz   A  733 na M2 V           
+Derthe Belt   2728 B000500-9    As Ni Va / Pz   A  733 na M2 V F5 V          
 Julio         2821 C57A520-9    Ni Wa / Tz         100 Ls K7 V K3 VI     
-Wayfinder     2823 A663831-C  J Ri Ph / Ht         700 Ls G6 V G9 V      
+Wayfinder     2823 A663831-C  J Ri Ph / Ht         700 Ls G6 V G9 V
+Astimov       2826 B77788A-9    In                 623 na F4 V M5 V
 Wolf 965      2922 X200000-0    Ba Va              802 Ls K7 II          
 Fabriano      2923 B767623-9    Ag Ga Ni Ri / T    501 Ls A1 V           
 Rostov        2929 D8697C7-6    Ri                 101 na G3 V K7 V      
@@ -326,7 +332,7 @@ Callisto      3028 D000432-9    As Ni Va           224 na M7 V M8 VI
 Giselle       3029 D988683-6    Ag Ni              222 na F3 V 
 Larayne       3121 D988737-7    Ni                 413 na K7 II   
 Davics        3123 X669504-0  J Ni Pr / Fo      R  502 Ch F9 VI          
-Heron         3126 A632984-C    Hi Na Po Cp / Ht   513 He K2 V           
+Heron         3126 A632984-C    Hi Na Po Cp / Ht   513 Hu K2 V           
 Elerius       3223 C000412-9  V As Ni Va           613 Ch M4 V           
 Narayanan     3226 C6766D8-5    Ag Ni / Lt Tz      924 na K8 V G9 VI     
 Hrugen        3228 X765672-0    Ag Ga Ni Ri / T R  214 na M1 V M7 VI     
@@ -351,31 +357,31 @@ Pyonyang      0837 C664730-3  V Ag Ri / Lt Pz   A  414 Ne F2 V
 Sheba         0931 B755866-7  J Ga / Pa Ph / Mr    925 Ne K7 V           
 Jiro          0933 B659864-9  J Ph / Mr            701 Ne A7 V           
 Jorge         0936 E757672-2  V Ag Ga Ni / Da L A  103 Ne K6 V K8 VI M2 V
-Interpol      0939 E552763-6    Po / Mr Tz         420 Me K9 V           
-Atchison      1038 C000252-9  J As Lo Va           900 Me M0 VI BD       
+Interpol      0939 E552763-6    Po / Mr Tz         420 Em K9 V           
+Atchison      1038 C000252-9  J As Lo Va           900 Em M0 VI BD       
 Stranski      1131 C000326-9    As Lo Va           403 na M8 V           
-Magda         1135 C689776-5    Ri / Lt Sa         702 Me M1 V K2 VI     
-Margerison    1138 C666966-9  V Ga Hi Pr / Mr T    504 Me K5 V           
-Rustah        1233 E651573-4    Ni Po / Lt         102 Me G7 IV K3 V     
-Vannen        1234 C668772-7    Ag Ri              800 Me M2 III         
-Ardenn        1236 A762876-9  V Ri Ph              203 Me G5 III G6 V    
-De Berghnby   1237 A863974-9    Hi Pr              222 Me A6 V           
-Stalin        1433 C668766-5    Ag Ri / Lt Mr T    320 Me K7 V           
-Luxor         1435 A883964-B    Hi Pr / Mr         703 Me G5 V M7 V      
-Pepyn         1436 B6639B6-9  V Hi Pr              120 Me F2 IV K1 V  
-Station Alpha 1438 ???????-?  S                    000 Me  
-Politburo     1440 BA84964-7    Hi Pr / Mr         901 Me F0 V           
-Mystral       1533 X6516B6-2  J Ni Po / Fo Lt   R  902 Me F4 V           
-Germania      1536 A7849A6-B  V Hi Pr Cp / Tz      502 Me K7 V M8 V K9 VI
-Kaj           1540 CA864B6-8    Ni Pa              803 Me G7 VI          
-Viridis       1638 C000222-9    As Lo Va           404 Me M5 VI          
+Magda         1135 C689776-5    Ri / Lt Sa         702 Em M1 V K2 VI     
+Margerison    1138 C666966-9  V Ga Hi Pr / Mr T    504 Em K5 V           
+Rustah        1233 E651573-4    Ni Po / Lt         102 Em G7 IV K3 V     
+Vannen        1234 C668772-7    Ag Ri              800 Em M2 III         
+Ardenn        1236 A762876-9  V Ri Ph              203 Em G5 III G6 V    
+De Berghnby   1237 A863974-9    Hi Pr              222 Em A6 V           
+Stalin        1433 C668766-5    Ag Ri / Lt Mr T    320 Em K7 V           
+Luxor         1435 A883964-B    Hi Pr / Mr         703 Em G5 V M7 V      
+Pepyn         1436 B6639B6-9  V Hi Pr              120 Em F2 IV K1 V  
+Station Alpha 1438 ???????-?  S                    000 Em  
+Politburo     1440 BA84964-7    Hi Pr / Mr         901 Em F0 V           
+Mystral       1533 X6516B6-2  J Ni Po / Fo Lt   R  902 Em F4 V           
+Germania      1536 A7849A6-B  V Hi Pr Cp / Tz      502 Em K7 V M8 V K9 VI
+Kaj           1540 CA864B6-8    Ni Pa              803 Em G7 VI          
+Viridis       1638 C000222-9    As Lo Va           404 Em M5 VI          
 Alameda       1732 C8849C7-9    Hi Pr              515 na F4 V           
 Trede         1733 C669696-8    Ni Ri / Sa         105 na K5 V M4 V      
-Ferreira      1734 B574661-9    Ag Ni / Mr         511 Me K2 V           
-La Paz        1736 A7748E9-9  J Pa Ph Pi           602 Me G0 V K4 V      
-Herc          1739 E7667B6-6    Ag Ga Ri / Tp      905 Me A6 V           
+Ferreira      1734 B574661-9    Ag Ni / Mr         511 Em K2 V           
+La Paz        1736 A7748E9-9  J Pa Ph Pi           602 Em G0 V K4 V      
+Herc          1739 E7667B6-6    Ag Ga Ri / Tp      905 Em A6 V           
 Von Strang    1833 B668721-9    Ag Ri              702 na F1 V G0 VI     
-Sakon         1834 C310451-9  J Ni / Tz            400 Me M6 VI          
+Sakon         1834 C310451-9  J Ni / Tz            400 Em M6 VI          
 Rime          1835 C783730-6    Ri / Tz            602 Fw K7 V           
 Titan         1836 A673831-A  J Ph Pi              504 Fw G2 V           
 Yung          1837 C768974-9  V Hi Pr              100 Fw F9 IV          
@@ -407,7 +413,7 @@ Dylan         2539 C87A541-9    Ni Wa              524 Fw F3 V
 Il Po         2636 A763733-B    Ri                 700 Fw K0 IV M8 VI    
 Cascade       2638 D761720-5  V Ri / Lt            403 Fw G2 V           
 Senwen        2640 C88485A-8    Ri Pa Ph           101 Fw F1 V K7 V      
-Berenice      2731 B7649FA-9    Hi Pr Cp / Fo   R  304 Rr F7 V           
+Berenice      2731 A7649FA-9    Hi Pr Cp / Fo   R  304 Rr F7 V           
 Bimler's World2732 B7568B6-6    Ga Pa Ph / Pz T A  500 Rr A3 V G1 VI     
 Coffman       2733 C000400-9    As Ni Va           604 na M7 V M8 V      
 Noosa         2737 D678643-6    Ag Ni              612 na K1 V           

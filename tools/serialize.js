@@ -1,7 +1,11 @@
-function pad(s, len) { return s + ' '.repeat(len - s.length); }
-function trim(s) { return s.replace(/\s+$/, ''); }
+function pad(s, len) {
+  return s + ' '.repeat(len - s.length);
+}
+function trim(s) {
+  return s.replace(/\s+$/, '');
+}
 
-function parse(s) {
+export function parse(s) {
   if (/\t/.test(s)) {
     return parseTabDelimited(s);
   }
@@ -66,17 +70,18 @@ function parseSec(s) {
 
   s.split('\n').forEach(line => {
     let m;
-    if ((m = /^(.*?)\s+(\d\d\d\d)\s+([ABCDEX?][0-9A-Z?]{6}-[0-9A-Z?])\s{1,2}([A-Z1-9* ])\s+(.{10,})\s+([GARBFU])?\s+(\d[0-9A-F][0-9A-F])\s+(\S\S)\s+(.*?)\s*$/.exec(line))) {
+    if ((m = /^(.*?)\s+(\d\d\d\d)\s+([ABCDEX?][0-9A-Z?]{6}-[0-9A-Z?])\s{1,2}([A-Z1-9* ])\s+(.{10,})\s+([GARBFU])?\s+(\d[0-9A-F][0-9A-F])\s+(\S\S)\s+(.*?)\s*$/
+                 .exec(line))) {
       worlds.push({
-        Name:        m[1],
-        Hex:         m[2],
-        UWP:         m[3],
-        Base:        trim(m[4] || ''),
-        Remarks:     m[5],
-        Zone:        trim(m[6] || ''),
-        PBG:         m[7],
-        Allegiance:  m[8],
-        Stars:       m[9]
+        Name: m[1],
+        Hex: m[2],
+        UWP: m[3],
+        Base: trim(m[4] || ''),
+        Remarks: m[5],
+        Zone: trim(m[6] || ''),
+        PBG: m[7],
+        Allegiance: m[8],
+        Stars: m[9]
       });
     } else {
       header.push(trim(line));
@@ -85,7 +90,10 @@ function parseSec(s) {
 
   return {
     type: 'sec',
-    fields: ['Name', 'Hex', 'UWP', 'Base', 'Remarks', 'Zone', 'PBG', 'Allegiance', 'Stars'],
+    fields: [
+      'Name', 'Hex', 'UWP', 'Base', 'Remarks', 'Zone', 'PBG', 'Allegiance',
+      'Stars'
+    ],
     header,
     worlds
   };
@@ -95,23 +103,16 @@ function formatSec(data, options) {
   const out = [].concat(data.header);
   data.worlds.forEach(world => {
     out.push(
-      pad(world.Name,       20) + ' ' +
-      world.Hex                 + ' ' +
-      world.UWP                 + ' ' +
-      pad(world.Base,        1) + ' ' +
-      pad(world.Remarks,    30) + ' ' +
-      pad(world.Zone,        1) + ' ' +
-      world.PBG                 + ' ' +
-      world.Allegiance          + ' ' +
-      world.Stars
-    );
+        pad(world.Name, 20) + ' ' + world.Hex + ' ' + world.UWP + ' ' +
+        pad(world.Base, 1) + ' ' + pad(world.Remarks, 30) + ' ' +
+        pad(world.Zone, 1) + ' ' + world.PBG + ' ' + world.Allegiance + ' ' +
+        world.Stars);
   });
 
   return out.join('\n') + '\n';
 }
 
-
-function format(data, options) {
+export function format(data, options) {
   if (data.type === 'tab')
     return formatTabDelimited(data, options);
   if (data.type === 'col')
@@ -123,9 +124,11 @@ function formatTabDelimited(data, options) {
   const out = [];
   out.push(data.fields.join('\t'));
   data.worlds.forEach(world => {
-    out.push(data.fields.map(field => {
-      return world[field] || '';
-    }).join('\t'));
+    out.push(data.fields
+                 .map(field => {
+                   return world[field] || '';
+                 })
+                 .join('\t'));
   });
   return out.join('\n') + '\n';
 }
@@ -167,16 +170,23 @@ function formatColDelimited(data, options) {
   }
 
   const out = [];
-  out.push(data.fields.map((field, index) => {
-    return pad(field, widths[index]);
-  }).join(' '));
-  out.push(widths.map(width => {
-    return '-'.repeat(width);
-  }).join(' '));
+  out.push(data.fields
+               .map((field, index) => {
+                 return pad(field, widths[index]);
+               })
+               .join(' '));
+  out.push(widths
+               .map(width => {
+                 return '-'.repeat(width);
+               })
+               .join(' '));
   data.worlds.forEach(world => {
-    out.push(data.fields.map((field, index) => {
-      return (world[field] || '')  + ' '.repeat(widths[index] - world[field].length);
-    }).join(' '));
+    out.push(data.fields
+                 .map((field, index) => {
+                   return (world[field] || '') +
+                       ' '.repeat(widths[index] - world[field].length);
+                 })
+                 .join(' '));
   });
 
   return out.join('\n') + '\n';
